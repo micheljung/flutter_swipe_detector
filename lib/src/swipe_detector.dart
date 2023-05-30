@@ -177,6 +177,9 @@ class _SwipeDetectorState extends State<SwipeDetector> {
   }
 
   void _calculateAndExecute() {
+    if (_updatePosition == null) {
+      return;
+    }
     final offset = _updatePosition - _startPosition;
     final direction = _getSwipeDirection(offset);
 
